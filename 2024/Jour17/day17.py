@@ -8,16 +8,17 @@ import numpy as np
 # Function
 
 def Combo(value, Ra, Rb, Rc):
-    if value <= 3 and value >= 0:
-        return value
-    elif value == 4:
-        return Ra
-    elif value == 5:
-        return Rb
-    elif value == 6:
-        return Rc
-    else:
-        return "Not valid"
+    match value:
+        case 0 | 1 | 2 | 3:
+            return value
+        case 4:
+            return Ra
+        case 5:
+            return Rb
+        case 6:
+            return Rc
+        case _:
+            return "Not valid"
 
 def Instruction(opcode, operand, tup_stored, pointeur, output):
     Ra, Rb, Rc = tup_stored
